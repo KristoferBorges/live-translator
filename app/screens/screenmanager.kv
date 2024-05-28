@@ -1,0 +1,30 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:include Loading loaging.Loading
+#:include TelaPrincipal tela_principal.TelaPrincipal
+#:include Traducao tela_traducao.Traducao
+
+
+<MainScreenManager>
+    transition: FadeTransition()
+    
+    Traducao:
+        id: tela_traducao
+        name: 'tela_traducao'
+
+    TelaPrincipal:
+        id: tela_principal
+        name: 'tela_principal'
+
+    Loading:
+        id: loading
+        name: 'loading'
+
+    
+
+    
+
+    
+
+    

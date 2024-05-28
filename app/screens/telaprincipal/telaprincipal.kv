@@ -1,0 +1,277 @@
+<MDFillRoundFlatButtonCustom@MDFlatButton+HoverBehavior>
+
+<TelaPrincipal>
+
+    Image:
+        source: "app/support/image/minimalbackground.jpg"
+        allow_stretch: True
+        keep_ratio: False
+        opacity: 0.020
+
+    AnchorLayout:
+        anchor_x: "right"
+        anchor_y: "top"
+
+        MDRectangleFlatIconButton:
+            text: "    "
+            font_name: app.font_monofonto
+            icon: "information"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 0, .7
+            icon_color: 1, 1, 0, .7
+            font_size: "20dp"
+            line_color: 0, 0, 0, 0
+            ripple_behavior: False
+            on_release:
+                self.ripple_color = (0, 0, 0, 0)
+                root.show_about()
+
+    MDGridLayout:
+        cols: 1
+        row_default_height: dp(50)
+        row_force_default: True
+        spacing: dp(20)
+        padding: [0, dp(16), 0, 0]
+
+        MDLabel:
+            text: "Bem-vindo ao Live Translator!"
+            font_name: app.font_Troops
+            theme_text_color: "Primary"
+            font_size: dp(36)
+            halign: "center"
+            size_hint_y: None
+            height: dp(60)
+
+        MDGridLayout:
+            cols: 2
+            row_default_height: dp(50)
+            row_force_default: True
+            spacing: dp(16)
+
+            MDGridLayout:
+                cols: 1
+                row_default_height: dp(50)
+                row_force_default: True
+                spacing: dp(1)
+                padding: dp(16)
+
+                MDLabel:
+                    text: "Idioma falado:"
+                    font_name: app.font_monofonto
+                    theme_text_color: "Secondary"
+                    font_style: "H6"
+                    halign: "center"
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_portugues_br
+                    text: "Português (BR)"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .0, .4, .2, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    on_release:
+                        root.definirIdiomaFalado("pt-br", btn_idioma_falado_portugues_br.text)
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_ingles_us
+                    text: "Inglês (US)"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .0, .4, .2, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    on_release:
+                        root.definirIdiomaFalado("en-us", btn_idioma_falado_ingles_us.text)
+                
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_espanhol
+                    text: "Espanhol"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaFalado("es", btn_idioma_falado_espanhol.text)
+                
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_japones
+                    text: "Japonês"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaFalado("ja", btn_idioma_falado_japones.text)
+                
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_coreano
+                    text: "Coreano"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaFalado("ko", btn_idioma_falado_coreano.text)
+                
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_arabe
+                    text: "Árabe"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaFalado("ar", btn_idioma_falado_arabe.text)
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_falado_outro
+                    text: "Outro"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .6, .5, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaFalado("outro", btn_idioma_falado_outro.text)
+
+
+            MDGridLayout:
+                cols: 1
+                row_default_height: dp(50)
+                row_force_default: True
+                spacing: dp(1)
+                padding: dp(16)
+
+                MDLabel:
+                    text: "Idioma destino:"
+                    font_name: app.font_monofonto
+                    theme_text_color: "Secondary"
+                    font_style: "H6"
+                    halign: "center"
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_portugues_br
+                    text: "Português (BR)"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .0, .4, .2, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    on_release:
+                        root.definirIdiomaDestino("pt-br", btn_idioma_destino_portugues_br.text)
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_ingles_us
+                    text: "Inglês (US)"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .0, .4, .2, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    on_release:
+                        root.definirIdiomaDestino("en-us", btn_idioma_destino_ingles_us.text)
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_espanhol
+                    text: "Espanhol"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaDestino("es", btn_idioma_destino_espanhol.text)
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_japones
+                    text: "Japonês"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaDestino("ja", btn_idioma_destino_japones.text)
+                
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_coreano
+                    text: "Coreano"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaDestino("ko", btn_idioma_destino_coreano.text)
+                
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_arabe
+                    text: "Árabe"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .1, .1, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaDestino("ar", btn_idioma_destino_arabe.text)
+
+                MDRectangleFlatIconButton:
+                    id: btn_idioma_destino_outro
+                    text: "Outro"
+                    font_name: app.font_monofonto
+                    font_size: "16dp"
+                    text_color: 1, 1, 1, 1
+                    md_bg_color: .6, .5, .1, 0.90
+                    line_color: 0, 0, 0, 0
+                    size_hint_x: 1
+                    disabled: True
+                    on_release:
+                        root.definirIdiomaDestino("outro", btn_idioma_destino_outro.text)
+
+    MDBoxLayout:
+        orientation: "horizontal"
+        padding: dp(20)
+        spacing: dp(16)
+        size_hint_y: None
+        height: dp(50)
+
+        MDRectangleFlatIconButton:
+            id: btn_iniciar
+            text: "Iniciar"
+            font_name: app.font_monofonto
+            font_size: "16dp"
+            text_color: 1, 1, 1, 1
+            md_bg_color: .1, .4, .7, 0.20
+            line_color: 0, 0, 0, 0
+            size_hint_x: .5
+            disabled: True
+            on_release:
+                root.verificadorDeInputs()
+            

@@ -1,0 +1,99 @@
+<MDFillRoundFlatButtonCustom@MDFlatButton+HoverBehavior>
+
+<Traducao>
+
+    Image:
+        source: "app/support/image/minimalbackground.jpg"
+        allow_stretch: True
+        keep_ratio: False
+        opacity: 0.060
+
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+
+        MDRectangleFlatIconButton:
+            text: "Back"
+            font_name: app.font_monofonto
+            icon: "arrow-left"
+            theme_text_color: "Custom"
+            font_size: "20dp"
+            line_color: 0, 0, 0, 0
+            on_release:
+                root.resetandoVariaveis()
+                root.manager.current = "tela_principal"
+        
+    
+    MDGridLayout:
+        cols: 2
+        row_default_height: dp(50)
+        row_force_default: True
+        padding: [0, dp(100), 0, 0]
+
+        MDLabel:
+            text: "Idioma Primário"
+            id: idioma_primario
+            font_name: app.font_monofonto
+            font_size: "25dp"
+            halign: "center"
+            valign: "center"
+            theme_text_color: "Custom"
+            md_bg_color: 1, 4, 5, .2
+            text_color: .9, .4, .4, 0.90
+        
+        MDLabel:
+            text: "Idioma Secundário"
+            id: idioma_secundario
+            font_name: app.font_monofonto
+            font_size: "25dp"
+            halign: "center"
+            valign: "center"
+            theme_text_color: "Custom"
+            md_bg_color: 1, 4, 5, .2
+            text_color: .9, .4, .4, 0.90
+
+    AnchorLayout:
+        # botão de imagem centralizado no meio
+        anchor_x: "center"
+        anchor_y: "center"
+
+        MDFlatButton:
+            size_hint: None, None
+            size: dp(200), dp(200)
+            ripple_behavior: False
+            on_release:
+                print("Clicou na imagem")
+                self.ripple_color = (0, 0, 0, 0)
+
+            Image:
+                source: "app/support/image/setas.png"
+                size_hint: None, None
+                size: dp(200), dp(200)
+                allow_stretch: True
+                keep_ratio: False
+
+        MDBoxLayout:
+            orientation: "vertical"
+            
+            MDLabel:
+                text: ""
+                id: mensagem
+                font_name: app.font_monofonto
+                font_size: "25dp"
+                halign: "center"
+                valign: "center"
+                
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: [0, dp(250), 0, 0]
+
+        MDLabel:
+            text: "Mensagem"
+            id: mensagem
+            font_name: app.font_monofonto
+            font_size: "25dp"
+            halign: "center"
+            valign: "center"
+            theme_text_color: "Custom"
+            text_color: .9, .4, .4, 0.70
+                

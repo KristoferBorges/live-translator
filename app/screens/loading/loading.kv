@@ -1,0 +1,28 @@
+<MDFillRoundFlatButtonCustom@MDFlatButton+HoverBehavior>
+
+<Loading>
+
+    MDGridLayout:
+        cols: 1
+        padding: dp(50)
+
+        MDLabel:
+            text: "Live Translator!"        
+            font_name: app.font_Troops
+            theme_text_color: "Primary"
+            font_size: dp(56)
+            halign: "center"
+            size_hint_y: None
+            height: dp(60)
+
+        RelativeLayout:
+            MDSpinner:
+                id: spinner
+                name: "spinner"
+                size_hint: None, None
+                size: dp(98), dp(98)
+                color: 0.9, 3, 1, 0
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                determinate: True
+                duration: 5
+                
