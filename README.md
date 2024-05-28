@@ -8,5 +8,5 @@ Consiste em facilitar a conversação entre 2 pessoas que não falam a mesma lin
 
 # Tecnologias Utilizadas
 
-Front-End = Kivy/Kivymd
+Front-End = Kivy/Kivymd |
 Back-End = Python
