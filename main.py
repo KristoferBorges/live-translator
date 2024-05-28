@@ -24,8 +24,8 @@ def coletarDadosDeTexto(language, translateLanguage, fonte, fonte_traducao):
                 lang=translateLanguage,
             )
 
-            audio.save("media\\voiceArchive\\audio_capture.mp3")
-            mixer.music.load("media\\voiceArchive\\audio_capture.mp3")
+            audio.save("app\\media\\voiceArchive\\audio_capture.mp3")
+            mixer.music.load("app\\media\\voiceArchive\\audio_capture.mp3")
             mixer.music.play()
 
             while mixer.music.get_busy():
@@ -65,8 +65,8 @@ def coletarDadosDeVoz(language, translateLanguage, fonte, fonte_traducao):
                     lang=translateLanguage,
                 )
 
-                audio.save("media\\voiceArchive\\audio_capture.mp3")
-                mixer.music.load("media\\voiceArchive\\audio_capture.mp3")
+                audio.save("app\\media\\voiceArchive\\audio_capture.mp3")
+                mixer.music.load("app\\media\\voiceArchive\\audio_capture.mp3")
                 mixer.music.play()
 
                 while mixer.music.get_busy():
