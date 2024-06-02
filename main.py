@@ -8,11 +8,12 @@ class LiveApp(MDApp, App):
     """
     Classe principal do sistema, responsável por gerenciar o sistema de programação em tempo real e também gerenciar os caminho dos arquivos .kv/.py
     """
+
     # Fontes
     font_monofonto = os.path.join(os.getcwd(), "app/support/fonts/monofonto.otf")
     font_Troops = os.path.join(os.getcwd(), "app/support/fonts/Troops.otf")
 
-    DEBUG = 1 # set this to 0 make live app not working
+    DEBUG = 0 # set this to 0 make live app not working
 
     # *.kv files to watch
     KV_FILES = {
@@ -42,8 +43,7 @@ class LiveApp(MDApp, App):
     AUTORELOADER_PATHS = [
         (".", {"recursive": True}),
     ]
-
-
+        
     def build_app(self):
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
@@ -52,4 +52,4 @@ class LiveApp(MDApp, App):
 
 
 if __name__ == "__main__":
-    LiveApp().run()
+        LiveApp().run()

@@ -3,6 +3,8 @@ import speech_recognition as sr
 from gtts import gTTS
 from pygame import mixer
 from googletrans import Translator
+from app.support.setup import Setup
+import traceback
 
 class Traducao(MDScreen):
     
@@ -14,12 +16,12 @@ class Traducao(MDScreen):
         self.idioma_destino = None
         self.idioma_destino_fonte = None
         self.idioma_destino_texto = None
+        
 
     def ativandoCapturaDeVoz(self, language, translateLanguage, fonte, fonte_traducao):
         """
         Função responsável por coletar os dados do usuário por via de Voz.
         """
-    
         while True:
             # Crie um objeto de reconhecimento de fala
             r = sr.Recognizer()
@@ -36,7 +38,7 @@ class Traducao(MDScreen):
                 if texto == "sair" or texto == "exit" or texto == "salir" or texto == "外出する" or texto == "외출하다":
                     # Implementar a saída
                     print("saida não programada")
-
+                    
                 else:
                     translator = Translator()
                     translatedText = translator.translate(texto, src=fonte, dest=fonte_traducao)
@@ -64,9 +66,17 @@ class Traducao(MDScreen):
                     print("saida não programada")
                 else:
                     continue
-
+            
             except sr.RequestError as e:
                 print("Erro ao solicitar resultados do serviço de reconhecimento de fala do Google; {0}".format(e))
+            
+            except Exception as _:
+                # Gerando log de erro
+                setup = Setup()
+                erro_detalhado = traceback.format_exc()
+                arquivo = open(setup.caminho_log + "log.log", "w")
+                arquivo.write(str(erro_detalhado))
+                arquivo.close()
 
     def coletaDeIdiomas(self):
         tela_principal = self.manager.get_screen("tela_principal")
@@ -82,7 +92,7 @@ class Traducao(MDScreen):
         print(self.idioma_falado_fonte)
         print(self.idioma_destino)
         print(self.idioma_destino_fonte)
-
+        
         self.ids.idioma_primario.text = self.idioma_falado_texto
         self.ids.idioma_secundario.text = self.idioma_destino_texto
 
