@@ -10,3 +10,5 @@ Consiste em facilitar a conversação entre 2 pessoas que não falam a mesma lin
 
 Front-End = Kivy/Kivymd |
 Back-End = Python
+
+# O Projeto tomará continuidade em outro repositório
